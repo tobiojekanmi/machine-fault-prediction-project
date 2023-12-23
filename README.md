@@ -91,6 +91,7 @@ Therefore we cannot affirm if the model is robust enough for long-term use​.
 ​
 ## **8. Project Re-implementation**
 To re-implement the experiment, kindly follow the steps below
+- Run `conda create --name faultprediction && conda activate faultprediction && conda install --name faultprediction --file requirements.txt` to install required packages
 - Run `python datasetup.py` do download and extract dataset from the 
 - Edit training configuration parameters in `python train.py`
 - Run `python train.py` to train the model
