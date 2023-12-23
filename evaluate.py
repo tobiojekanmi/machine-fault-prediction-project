@@ -24,3 +24,23 @@ def predict_targets(model, dataloader, pred_fault_loc=True, device='cpu'):
 
     return targets, predictions
 
+
+def get_loss(model, dataloader, criterion, pred_fault_loc=True, device='cpu'):
+    model.eval()
+    running_loss = 0
+    running_examples = 0
+
+    with torch.no_grad():
+        for data in dataloader:
+            X = data["data"].type(torch.float32)
+            y = data["label"].type(torch.float32)
+            y = format_target(y, pred_fault_loc=pred_fault_loc)
+            X, y = X.to(device), y.to(device)
+            y_pred = model(X)
+            loss = criterion(y_pred, y)
+            running_loss += loss
+            running_examples += len(X)
+
+    loss = np.round((running_loss/running_examples).detach().cpu().numpy(), 7)
+    return loss
+
