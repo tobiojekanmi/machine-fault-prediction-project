@@ -24,7 +24,7 @@ To achieve the specified objectives, we did the following during data collection
 
 Moreover, Figure 3.1 below shows the signal for both healthy and unhealthy system state.
 
- ![](images/eda.png)
+ ![](assets/eda.png)
 Figure 3.1: Signal Overview at 25Hz
 
 
@@ -37,7 +37,7 @@ Additionally, we purposefully structured our model to predict fault locations on
 
 The model architecture is therefore depicted in Figure 4.1 below 
 <br><br>
-![](images/model_architecture.png)
+![](assets/model_architecture.png)
 <br><br>
 Figure 4.1: Model Architecture
 
@@ -52,7 +52,7 @@ We used the following configurations to train our model
 
 ## **6. Results**
 ### **6.1. Training and Validation Losses and Accuracies**
-![](images/loss-and-accuracy.png)
+![](assets/loss-and-accuracy.png)
 Figure 6.1: Final Training and Validation Losses and Accuracies
 
 | Dataset | Accuracy (%) |
@@ -72,7 +72,8 @@ Table 6.1: Final Fault Prediction Accuracy
 Table 6.2: Final Fault Location Prediction Accuracy
 
 ### **6.2. Confusion Matrix**
-![](images/confusion-matrices.png)
+## **Qualitative Results**
+![Confusion Matrices](assets/confusion-matrices.png "Confusion Matrices")
 <br>
 Figure 6.2: Confusion Matrices
 
